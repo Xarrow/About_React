@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { combineReducers, createStore } from 'redux';
 import $ from 'jquery';
 import axios from 'axios';
+import { getRuWeiboResponse } from '../utils/index';
+import WeiboEx from '../components/WeiboEx';
 
 // noinspection JSAnnotator
 const userReducer = (state = {}, actions) => {
@@ -45,17 +47,36 @@ store.dispatch({ type: 'INC', payload: 1 });
 store.dispatch({ type: 'INC', payload: 1 });
 store.dispatch({ type: 'DEC', payload: 1 });
 
-$.get('/ru', (data) => {
-  console.log(data);
-});
+// $.get('/ru', (data) => {
+//   console.log(data);
+// });
 
-axios.get('/ru').then((response) => {
-  console.log(response);
-});
+export default class WeiboPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      posts: [],
+    };
+  }
 
+  componentDidMount() {
+    getRuWeiboResponse().then((res) => {
+      const posts = res.data.cards.map(_card => _card.mblog);
+      this.setState({ posts });
+    });
+  }
+  render() {
+    return (
+      <div>
+        <h1>微博</h1>
+        {/* <WeiboEx txt={this.state.weiboData.map()} />*/}
+        <div>{this.state.posts.map(post => <img src={post.original_pic} />)}
+          {/*dangerouslySetInnerHTML={{ __html: post.original_pic }}*/}
+          <hr />
+          <hr />
 
-function WeiboPage() {
-  return <h1>微博</h1>;
+        </div>
+      </div>
+    );
+  }
 }
-
-export default WeiboPage;
