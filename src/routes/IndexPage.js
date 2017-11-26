@@ -11,6 +11,7 @@ function IndexPage() {
       <ul className={styles.list}>
         <li>To get started, edit <code>src/index.js</code> and save to reload.</li>
         <li><a href="https://github.com/dvajs/dva-docs/blob/master/v1/en-us/getting-started.md">Getting Started</a></li>
+        <image src={'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Janna_0.jpg'} />
       </ul>
       <div className="App">
         <Button type="primary">Button</Button>

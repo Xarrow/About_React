@@ -71,7 +71,7 @@ export default class WeiboPage extends Component {
         <h1>微博</h1>
         {/* <WeiboEx txt={this.state.weiboData.map()} />*/}
         <div>{this.state.posts.map(post => <img src={post.original_pic} />)}
-          {/*dangerouslySetInnerHTML={{ __html: post.original_pic }}*/}
+          {/* dangerouslySetInnerHTML={{ __html: post.original_pic }}*/}
           <hr />
           <hr />
 

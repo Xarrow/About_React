@@ -46,6 +46,17 @@ class MenuDemo extends React.Component {
                 <span>微博</span>
               </Link>
             </Menu.Item>
+            <Menu.Item>
+              <Link to="/MyGallery">
+                <Icon type="desktop" />
+                <span>图片</span>
+              </Link>
+            </Menu.Item>
+            <Menu.Item>
+              <Link to="/weibogrid">
+                嘻红豆的微博
+              </Link>
+            </Menu.Item>
             <SubMenu
               key="sub1"
               title={<span><Icon type="user" /><span>User</span></span>}

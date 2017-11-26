@@ -15,9 +15,13 @@
     "babel-runtime": "^6.9.2",
     "dva": "^1.2.1",
     "jquery": "^3.2.1",
+    "material-ui": "^1.0.0-beta.21",
+    "material-ui-icons": "^1.0.0-beta.17",
+    "photoswipe": "^4.1.2",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "redux-saga": "^0.16.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
