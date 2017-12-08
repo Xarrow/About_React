@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { combineReducers, createStore } from 'redux';
+import { Form, Icon, Input, Button } from 'antd';
 import $ from 'jquery';
 import axios from 'axios';
 import { getRuWeiboResponse } from '../utils/index';
 import WeiboEx from '../components/WeiboEx';
+
+const FormItem = Form.Item;
+
 
 // noinspection JSAnnotator
 const userReducer = (state = {}, actions) => {
