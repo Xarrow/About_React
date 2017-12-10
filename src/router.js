@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, hashHistory } from 'dva/router';
+import {Router, Route, hashHistory} from 'dva/router';
 import IndexPage from './routes/IndexPage';
 import AntdLayout from './routes/AntdLayout';
 import HelloContent from './routes/HelloContent';
@@ -18,21 +18,21 @@ function RouterConfig() {
     <Router history={hashHistory}>
       <Route path="/" component={AntdLayout}>
         <Route path="/counter" component = {CounterComponent}/>
-        <Route path="/hello" component={HelloContent} />
-        <Route path="/janna" component={IndexPage} />
-        <Route path="/weibo" component={WeiboPage} />
-        <Route path="/MyGallery" component={MyGallery} />
-        <Route path="/weibogrid" component={WeiboGrid} />
-        <Route path="all_it_books" component={AllItBooks} />
-        <Route path="/reduxLearning" component={ReduxLearning} />
+        <Route path="/hello" component={HelloContent}/>
+        <Route path="/janna" component={IndexPage}/>
+        <Route path="/weibo" component={WeiboPage}/>
+        <Route path="/MyGallery" component={MyGallery}/>
+        <Route path="/weibogrid" component={WeiboGrid}/>
+        <Route path="all_it_books" component={AllItBooks}/>
+        {/*<Route path="/reduxLearning" component={ReduxLearning}/>*/}
       </Route>
       <Route path={'app'}>
-        <Route path={'helloContent'} component={HelloContent} />
+        <Route path={'helloContent'} component={HelloContent}/>
       </Route>
       <Route path={'react'}>
-        <Route path={'parent_and_child'} component={ParentAndChildPage} />
+        <Route path={'parent_and_child'} component={ParentAndChildPage}/>
       </Route>
-      <Route path="/gallery" component={Gallery} />
+      <Route path="/gallery" component={Gallery}/>
     </Router>
   );
 }

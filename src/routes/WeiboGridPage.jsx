@@ -12,7 +12,6 @@ function RetweetedFunction(props) {
     return (
       <div>
         <h3 dangerouslySetInnerHTML={{ __html: props.text }} />
-        <hr/>
         <Row>
           {picsCols}
         </Row>
@@ -73,20 +72,29 @@ const columns = [
   {
     title: '图片',
     dataIndex: 'mblog',
-    key: 'original_pic',
+    key: 'pics',
     render: (mblog) => {
-      if (mblog.original_pic !== undefined) {
-        return (<img
-          alt={mblog.original_pic}
-          src={mblog.original_pic} style={{ height: 50, width: 30 }}
-        />);
+      if (mblog.pics !== undefined) {
+        let picsConfig = {
+          text:"",
+          source:"",
+          pics:mblog.pics
+
+        }
+        //
+        return (<RetweetedFunction {...picsConfig}/>)
+        // return (<img
+        //   alt={mblog.original_pic}
+        //   src={mblog.original_pic} style={{ height: 50, width: 30 }}
+        // />);
       } else {
         return <p>没有照片</p>;
       }
     },
+    width:400,
   },
   {
-    title: 'pics',
+    title: '转载图片',
     dataIndex: 'mblog',
     key: 'retweeted',
     render: (mblog) => {
@@ -145,7 +153,7 @@ export default class WeiboGrid extends Component {
       pagination.pageSize = 10;
       this.setState({
         loading: false,
-        data: res.data.data.cards,
+        data: res.data.data.data.cards,
         pagination,
       });
     });
@@ -161,7 +169,7 @@ export default class WeiboGrid extends Component {
       scroll: { x: 1500 },
     };
     return (
-      <div className="tableDiv" style={{ background: '#ffffff', padding: 10, 'box-shadow': '0.5px 0.5px 20px black' }}>
+      <div className="tableDiv" style={{ background: '#ffffff', padding: 10, }}>
         <WeiboAvator src={'https://ww4.sinaimg.cn/orj480/d8cd7ff9jw8fcn2yfhqm1j20ig0igwfm.jpg'} name={'嘻红豆'} />
         <Table {...tableConfig} />
       </div>
